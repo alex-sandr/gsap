@@ -1,0 +1,148 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 65px var(--padding-blocks) 80px var(--padding-blocks);
+  &__logo {
+    font-size: 40px;
+    line-height: 38px;
+  }
+}
+.menu__toggle {
+  display: none;
+}
+.menu-list {
+  display: flex;
+  font-size: 18px;
+  line-height: 17px;
+  &__item + &__item{
+    margin-left: 62px;
+  }
+
+  & .btn {
+    padding: 30px 80px;
+  }
+  &__link {
+
+  }
+}
+.head-wrapper {
+  height: 100vh;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 40px var(--padding-blocks) 0 var(--padding-blocks);
+
+    &__logo {
+      font-size: 20px;
+      line-height: 19px;
+    }
+  }
+
+  .menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    padding: var(--padding-blocks);
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    &__toggle {
+      display: flex;
+      justify-content: flex-end;
+      z-index: 4;
+    }
+    &__toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #3B3B3B;
+    }
+  }
+  .menu-list {
+    font-size: 40px;
+    line-height: 38px;
+    flex-direction: column;
+    margin: auto 0;
+    &__item + &__item{
+      margin: 30px 0 0 0;
+    }
+    &__item:last-child {
+    }
+    & .btn {
+      display: inline-block;
+      position: absolute;
+      font-size: 18px;
+      line-height: 17px;
+      margin-top: 13vh;
+    }
+    &__link {
+
+    }
+  }
+  .head-wrapper {
+  }
+  .menu {
+    transition: .2s opacity ease-in-out;
+   opacity: 0;
+    pointer-events: none;
+  }
+  .menu--active {
+    opacity: 1;
+  }
+}
+.burger {
+  width: 20px;
+  height: 20px;
+  span + span {
+    margin-top: 6px;
+  }
+  span {
+    transition: 0.2s all;
+    margin-left: auto;
+    background: #fff;
+    border-radius: 18px;
+    display: block;
+    &:nth-child(1) {
+      height: 2px;
+      width: 18px;
+    }
+    &:nth-child(2) {
+      height: 2px;
+      width: 8px;
+    }
+    &:nth-child(3) {
+      height: 2px;
+      width: 13px;
+    }
+  }
+  &._active {
+    span {
+      transform-origin: center center;
+      &:nth-child(1) {
+        height: 2px;
+        width: 18px;
+        transform: translate(0px,8px) rotate(-45deg)
+      }
+      &:nth-child(2) {
+        opacity: 0
+      }
+      &:nth-child(3) {
+        transform: translate(0px,-8px) rotate(45deg);
+        height: 2px;
+        width: 18px;
+      }
+    }
+  }
+}
+@media (max-height: 450px) {
+  .menu-list {
+    .btn {
+      margin-top: 0;
+    }
+  }
+}

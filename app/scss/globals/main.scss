@@ -1,0 +1,27 @@
+body {
+  background: $body-bg;
+  color: #fff;
+  font-family: DrukWide;
+  overflow-x: hidden;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: $trs color ease-in-out;
+}
+a:hover {
+  color: #6DE0BC;
+}
+.color-main {
+  color: #6DE0BC;
+}
+.plr {
+  padding: 0 80px 0 80px;
+}
+.rolling-text {
+  white-space: nowrap;
+display: flex;
+}
+.rolling-text-reverse {
+  white-space: nowrap;
+}
